@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Golang Environment
         uses: actions/setup-go@v2
         with:
@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Docker Buildx
         uses: docker/setup-buildx-action@v1
         with:
@@ -86,7 +86,7 @@ jobs:
       contains(github.ref, 'refs/tags/')
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Retrieve Tag
         id: get_version
         run: echo ::set-output name=GIT_TAG::$(echo ${GITHUB_REF/refs\/tags\//} | tr -d v)
